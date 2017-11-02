@@ -17,6 +17,7 @@ app.get('*', (req, res) => {
 
 // Main API functionality
 app.post('/search', (req, res) => {
+  console.log(req.body)
   // Parse request body
   const bookingNumber = req.body.bookingNumber
   const steamshipLine = req.body.steamshipLine
