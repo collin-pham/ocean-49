@@ -8,6 +8,12 @@ app.set('port', (process.env.PORT || 5000));
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
+// Allow request from any URL for now
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 // Handle all GET requests
 app.get('*', (req, res) => {
   res.type('text/html'); 
@@ -17,7 +23,6 @@ app.get('*', (req, res) => {
 
 // Main API functionality
 app.post('/search', (req, res) => {
-  console.log(req.body)
   // Parse request body
   const bookingNumber = req.body.bookingNumber
   const steamshipLine = req.body.steamshipLine
