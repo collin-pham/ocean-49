@@ -37,6 +37,6 @@ app.post('/search', (req, res) => {
   .catch((err) => { res.status(400).send(err) })
 })
 
-app.listen(app.get('port'), function() {
+app.listen(app.get('port'), () => {
   console.log('Node app is running on port', app.get('port'));
 });
