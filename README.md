@@ -10,3 +10,20 @@ cd into the repo and run `npm install` to install the necessary node packages
 
 run `npm run start`
 
+### Structure
+
+#### index.js
+  Is the root file of our app and defines our endpoints
+
+#### lib 
+
+  The lib directory houses all functionalities of our backend.
+
+#### search
+  The search directory contains the files that define our search functionality
+
+### api
+  The api directory houses company specific code to extract data from 3rd party API's
+
+
+
