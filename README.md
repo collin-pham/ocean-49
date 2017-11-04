@@ -26,4 +26,34 @@ run `npm run start`
   The api directory houses company specific code to extract data from 3rd party API's
 
 
+# API Documentation
 
+To interact with the server from the frontend, send an object of the form:
+
+```
+payload = {
+  bookingNumber: String,
+  steamshipLine: String
+}
+```
+
+The expected repsonse will be:
+
+```
+response = {
+  {
+    origin              : String,
+    destination         : String,
+    vessel              : String,
+    voyage              : String,
+    arrival             : String,
+    containers          : [
+      {
+        containerNumber: {
+            sizeAndType: String}
+        },
+        ...
+    ] 
+  }
+}
+```
